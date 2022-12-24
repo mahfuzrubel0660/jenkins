@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "munnaeeebd/httpd-cicd"
+    registry = "mahfuzrubel0660/httpd-cicd"
     registryCredential = 'dockerhub'
     dockerImage = ''
   }
@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/munnaeebd/jenkin.git'
+        git 'https://github.com/mahfuzrubel0660/jenkin.git'
       }
     }
     stage('Building image') {
@@ -29,7 +29,7 @@ pipeline {
     }
     stage('Kubectl-Image-Set') {
       steps{
-        sh "kubectl set image deployment/httpd-cicd httpd-cicd=munnaeeebd/httpd-cicd:$BUILD_NUMBER"  
+        sh "kubectl set image deployment/httpd-cicd httpd-cicd=mahfuzrubel0660:/httpd-cicd:$BUILD_NUMBER"  
       }
     }
   }
